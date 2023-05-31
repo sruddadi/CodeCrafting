@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Profile</title>
+    <style>
+      .avatar {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My Profile</h1>
+    <h2>Last Hobby: <span id="lastHobby"></span></h2>
+    <img
+      src="assets/passportcopy.jpg"
+      alt="Error loading image"
+      class="avatar"
+    />
+
+    <script>
+      const myProfile = {
+        name: "Srikar Uddadi",
+        age: "26",
+        location: "McKinney",
+        occupation: "Software Engineer",
+        education: "Masters",
+        expertise: "Full Stack",
+        hobbies: [
+          "Cricket",
+          "Smoking",
+          "Coding",
+          "Eating Fruits",
+          "Playing TT",
+        ],
+        avatar: {
+          height: 250,
+          width: 250,
+          image: "assets/avatar.jpg",
+        },
+      };
+
+      const lastHobbyElement = document.getElementById("lastHobby");
+      lastHobbyElement.textContent =
+        myProfile.hobbies[myProfile.hobbies.length - 1];
+    </script>
+  </body>
+</html>
