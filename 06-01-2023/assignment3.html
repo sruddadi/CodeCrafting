@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Transfer Amount</title>
+  </head>
+  <body>
+    <h1>Transfer Amount</h1>
+    <input type="text" />
+    <script>
+      var dev = 10;
+      var prod = 5;
+      var stage = 30;
+      var test = 20;
+      let amt = 100;
+      let env = "prod";
+      let sendingAmount = 0;
+      if (env === "dev") {
+        sendingAmount = amt + (amt * dev) / 100;
+      } else if (env === "test") {
+        sendingAmount = amt + (amt * test) / 100;
+      } else if (env === "stage") {
+        sendingAmount = amt + (amt * stage) / 100;
+      } else if (env === "prod") {
+        sendingAmount = amt + (amt * prod) / 100;
+      } else {
+        console.log("Invalid environment");
+      }
+      console.log(sendingAmount);
+
+      let amt2 = 220;
+      let sendingAmount2 = 0;
+      let env2 = "stage";
+      switch (env2) {
+        case "dev":
+          sendingAmount2 = amt2 + (amt2 * dev) / 100;
+          break;
+        case "test":
+          sendingAmount2 = amt2 + (amt2 * test) / 100;
+          break;
+        case "stage":
+          sendingAmount2 = amt2 + (amt2 * stage) / 100;
+          break;
+        case "prod":
+          sendingAmount2 = amt2 + (amt2 * prod) / 100;
+          break;
+        default:
+          console.log("Invalid environment");
+      }
+
+      console.log(sendingAmount2);
+    </script>
+  </body>
+</html>
