@@ -11,14 +11,9 @@
     </style>
   </head>
   <body>
-    <h1>My Profile</h1>
+    <h1 id="name"></h1>
     <h2>Last Hobby: <span id="lastHobby"></span></h2>
-    <img
-      src="assets/passportcopy.jpg"
-      alt="Error loading image"
-      class="avatar"
-    />
-
+    <img alt="Error loading image" class="avatar" id="imageP" />
     <script>
       const myProfile = {
         name: "Srikar Uddadi",
@@ -32,18 +27,22 @@
           "Smoking",
           "Coding",
           "Eating Fruits",
-          "Playing TT",
+          "Playing Table Tennis",
         ],
         avatar: {
           height: 250,
           width: 250,
-          image: "assets/avatar.jpg",
+          image: "assets/passportcopy.jpg",
         },
       };
 
+      const nameElement = document.getElementById("name");
+      nameElement.textContent = myProfile.name;
       const lastHobbyElement = document.getElementById("lastHobby");
       lastHobbyElement.textContent =
         myProfile.hobbies[myProfile.hobbies.length - 1];
+      const imageElement = document.getElementById("imageP");
+      imageElement.src = myProfile.avatar.image;
     </script>
   </body>
 </html>
