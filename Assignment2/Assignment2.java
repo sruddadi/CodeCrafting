@@ -1,3 +1,5 @@
+package Assignment2;
+
 public class Assignment2 {
     public static class Student {
         String Name;
