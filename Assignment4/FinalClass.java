@@ -1,7 +1,7 @@
 package Assignment4;
 
-public class FinalClass {
-    public final int sum = 100;
+final class FinalClass {
+    final int sum = 100;
     final void sum() {
         System.out.println("This is the final method");
     }
