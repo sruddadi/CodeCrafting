@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Profile Information</title>
+    <style>
+      .container {
+        width: 300px;
+        margin: 20px auto;
+      }
+
+      .input-div {
+        margin-bottom: 10px;
+      }
+      .submit-btn {
+        background-color: brown;
+        color: white;
+        border-radius: 5px;
+        border-color: brown;
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Profile Information</h2>
+      <img
+        src="asset/passportcopy.jpg"
+        alt="Profile Image"
+        width="200"
+        height="200"
+      />
+      <div class="input-div">
+        <label>First Name:</label>
+        <input type="text" id="fname" name="first-name" required />
+      </div>
+      <div class="input-div">
+        <label>Last Name:</label>
+        <input type="text" id="lname" name="last-name" required />
+      </div>
+      <div class="input-div">
+        <label>Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required />
+      </div>
+      <div class="input-div">
+        <label>Email:</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="input-div">
+        <label>Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required />
+      </div>
+      <button id="submit-btn" class="submit-btn" onclick="displayInfo()">
+        Submit
+      </button>
+      <div id="profile-info"></div>
+    </div>
+
+    <script>
+      function displayInfo() {
+        var firstName = document.getElementById("fname").value;
+        var lastName = document.getElementById("lname").value;
+        var dob = document.getElementById("dob").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+
+        var pInfo = "First Name: " + firstName + "<br>";
+        pInfo += "Last Name: " + lastName + "<br>";
+        pInfo += "Date of Birth: " + dob + "<br>";
+        pInfo += "Email: " + email + "<br>";
+        pInfo += "Phone Number: " + phone + "<br>";
+
+        document.getElementById("profile-info").innerHTML = pInfo;
+      }
+    </script>
+  </body>
+</html>
