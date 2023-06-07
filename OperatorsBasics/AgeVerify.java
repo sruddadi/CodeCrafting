@@ -1,4 +1,4 @@
-package Assignment5;
+package OperatorsBasics;
 
 import java.util.Scanner;
 

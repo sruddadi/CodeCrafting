@@ -1,4 +1,4 @@
-package Assignment3;
+package OOPSConcepts;
 
 class Product {
     private double price;

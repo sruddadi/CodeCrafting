@@ -1,4 +1,4 @@
-package Assignment3;
+package OOPSConcepts;
 
 public abstract class Department {
     public abstract int getDepartmentSize();

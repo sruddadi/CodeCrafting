@@ -1,4 +1,4 @@
-package Assignment4;
+package InterfaceBasics;
 
 final class FinalClass {
     final int sum = 100;

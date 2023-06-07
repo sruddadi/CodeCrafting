@@ -1,4 +1,4 @@
-package Assignment4;
+package InterfaceBasics;
 
 public interface DepositInterface {
     void deposit(int amount);

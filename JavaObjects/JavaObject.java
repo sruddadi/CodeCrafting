@@ -1,6 +1,6 @@
-package Assignment2;
+package JavaObjects;
 
-public class Assignment2 {
+public class JavaObject {
     public static class Student {
         String Name;
         public String getStudent() {

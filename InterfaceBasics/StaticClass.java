@@ -1,4 +1,4 @@
-package Assignment4;
+package InterfaceBasics;
 
 public class StaticClass {
     public static int sum;

@@ -1,4 +1,4 @@
-package Assignment1;
+package JavaBasics;
 
 public class FirstProgram {
     public static void main(String args[]) {

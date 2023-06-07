@@ -1,4 +1,4 @@
-package Assignment4;
+package InterfaceBasics;
 
 public class Child extends Parent{
     int childVariable;

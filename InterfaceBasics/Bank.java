@@ -1,4 +1,4 @@
-package Assignment4;
+package InterfaceBasics;
 
 public class Bank implements DepositInterface, WithdrawInterface{
     private int bal=100;

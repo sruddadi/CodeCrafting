@@ -1,4 +1,4 @@
-package Assignment6;
+package ArrayBasics;
 
 public class ReverseArray {
     public static void main(String[] args) {
