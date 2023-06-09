@@ -1,0 +1,15 @@
+<html>
+  <head> </head>
+  <script>
+    Array.prototype.smallestArray = function () {
+      var sortedArray = this.sort(function (a, b) {
+        return a - b;
+      });
+      return sortedArray[1];
+    };
+
+    var array = [5, 2, 4, 5, 6, 1, 9, 10];
+    console.log(array.smallestArray());
+  </script>
+  <body></body>
+</html>
