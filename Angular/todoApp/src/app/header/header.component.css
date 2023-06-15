@@ -1,0 +1,49 @@
+.header {
+    background-color: rgb(176, 103, 103);
+    color: white;
+    padding: 20px;
+    margin-top: -7.5px;
+  }
+  
+  .menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    margin-left: 260px;
+  }
+  
+  .menu li {
+    float: left;
+    margin-right: 20px;
+  }
+
+  .btn-check {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+    border-color: white;
+    color: black;
+  }
+  
+  .search-box {
+    float: right;
+    margin-top: -33px;
+  }
+  
+  .search-box input[type="text"] {
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+  }
+  
+  .search-box button[type="submit"] {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: none;
+    background-color: white;
+    color: black;
+    margin-left: 15px;
+    cursor: pointer;
+  }
+  

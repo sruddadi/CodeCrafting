@@ -1,0 +1,20 @@
+<div class="header">
+  <ul class="menu">
+    <li>
+      <button class="btn-check">Profile</button>
+    </li>
+    <li>
+      <button class="btn-check">Contact</button>
+    </li>
+    <li>
+      <button class="btn-check" (click)="LoginState()">
+        {{ LogIn ? "Logout" : "Login" }}
+      </button>
+    </li>
+  </ul>
+
+  <div class="search-box">
+    <input type="text" placeholder="Search..." />
+    <button type="submit">Search</button>
+  </div>
+</div>

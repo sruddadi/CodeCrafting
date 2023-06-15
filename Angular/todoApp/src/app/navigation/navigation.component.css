@@ -1,0 +1,52 @@
+.sidebar {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    width: 200px;
+    height: 1000px;
+    margin-left: -10px;
+    margin-top: -77px;
+  }
+  .title {
+    margin-top: -2px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+  }
+  .menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 50px;
+  }
+  
+  .menu li {
+    margin-bottom: 10px;
+  }
+  
+  .menu li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .search-box {
+    margin-top: 20px;
+  }
+  
+  .search-box input[type="text"] {
+    width: 90%;
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+  }
+  
+  .search-box button[type="submit"] {
+    width: 30%;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: none;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
