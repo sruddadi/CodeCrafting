@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ResourceAPI.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">crudapi</a> &gt; <a href="index.source.html" class="el_package">com.crudapi.crudapi.Resource</a> &gt; <span class="el_source">ResourceAPI.java</span></div><h1>ResourceAPI.java</h1><pre class="source lang-java linenums">package com.crudapi.crudapi.Resource;
+
+import com.crudapi.crudapi.Controller.UserDetails;
+import com.crudapi.crudapi.Service.ServiceAPI;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+import java.util.stream.Collectors;
+
+@RestController
+@RequestMapping(&quot;/apicall&quot;)
+public class ResourceAPI {
+    private ServiceAPI dataService;
+
+    @Autowired
+<span class="fc" id="L21">    public ResourceAPI(ServiceAPI dataService) {</span>
+<span class="fc" id="L22">        this.dataService = dataService;</span>
+<span class="fc" id="L23">    }</span>
+
+    @GetMapping
+    public List&lt;UserDetails&gt; getAllData() {
+<span class="fc" id="L27">        return dataService.getDataList();</span>
+    }
+
+    @GetMapping(&quot;/{name}&quot;)
+    public List&lt;UserDetails&gt; getData(@PathVariable String name) {
+<span class="fc" id="L32">        List&lt;UserDetails&gt; dataList = dataService.getDataList();</span>
+
+<span class="fc" id="L34">        List&lt;UserDetails&gt; filteredList = dataList.stream()</span>
+<span class="fc" id="L35">                .filter(userDetails -&gt; userDetails.getVendorName().equals(name))</span>
+<span class="fc" id="L36">                .collect(Collectors.toList());</span>
+
+<span class="fc" id="L38">        return filteredList;</span>
+    }
+
+    @PostMapping
+    public void addData(@RequestBody UserDetails newData) {
+<span class="fc" id="L43">        newData.setId(UUID.randomUUID().toString());</span>
+<span class="fc" id="L44">        dataService.getDataList().add(newData);</span>
+<span class="fc" id="L45">    }</span>
+
+    @DeleteMapping(&quot;/{index}&quot;)
+    public void deleteData(@PathVariable int index) {
+<span class="fc" id="L49">        dataService.getDataList().remove(index);</span>
+<span class="fc" id="L50">    }</span>
+
+    @PutMapping(&quot;/{index}&quot;)
+    public void updateData(@PathVariable int index, @RequestBody UserDetails updatedData) {
+<span class="fc" id="L54">        List&lt;UserDetails&gt; dataList = dataService.getDataList();</span>
+
+<span class="pc bpc" id="L56" title="2 of 4 branches missed.">        if (index &gt;= 0 &amp;&amp; index &lt; dataList.size()) {</span>
+<span class="fc" id="L57">            updatedData.setId(dataService.getDataList().get(index).getId());</span>
+<span class="fc" id="L58">            dataList.set(index, updatedData);</span>
+        }
+<span class="fc" id="L60">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

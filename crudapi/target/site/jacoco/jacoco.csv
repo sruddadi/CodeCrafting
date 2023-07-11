@@ -1,0 +1,5 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+crudapi,com.crudapi.crudapi.Resource,ResourceAPI,0,73,2,2,0,19,2,7,0,7
+crudapi,com.crudapi.crudapi.Service,ServiceAPI,69,9,14,0,1,4,12,2,5,2
+crudapi,com.crudapi.crudapi.Controller,UserDetails,329,39,63,1,6,12,48,5,16,5
+crudapi,com.crudapi.crudapi,CrudapiApplication,5,3,0,0,2,1,1,1,1,1
