@@ -31,11 +31,9 @@ public class ResourceAPI {
     public List<UserDetails> getData(@PathVariable String name) {
         List<UserDetails> dataList = dataService.getDataList();
 
-        List<UserDetails> filteredList = dataList.stream()
+        return dataList.stream()
                 .filter(userDetails -> userDetails.getVendorName().equals(name))
                 .collect(Collectors.toList());
-
-        return filteredList;
     }
 
     @PostMapping
@@ -45,9 +43,22 @@ public class ResourceAPI {
     }
 
     @DeleteMapping("/{index}")
-    public void deleteData(@PathVariable int index) {
-        dataService.getDataList().remove(index);
+    public void deleteData(@PathVariable String id) {
+        List<UserDetails> dataList = dataService.getDataList();
+        UserDetails userToRemove = null;
+
+        for (UserDetails userDetails : dataList) {
+            if (userDetails.getId().equals(id)) {
+                userToRemove = userDetails;
+                break;
+            }
+        }
+
+        if (userToRemove != null) {
+            dataList.remove(userToRemove);
+        }
     }
+
 
     @PutMapping("/{index}")
     public void updateData(@PathVariable int index, @RequestBody UserDetails updatedData) {

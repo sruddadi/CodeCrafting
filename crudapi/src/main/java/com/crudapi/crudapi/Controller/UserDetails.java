@@ -22,4 +22,15 @@ public class UserDetails {
         this.rate = rate;
         this.technology = technology;
     }
+
+    public UserDetails(String id, String consultantName, String submissionDate, String leadName, String vendorName, String salesPerson, double rate,String technology) {
+        this.id = id;
+        this.consultantName = consultantName;
+        this.submissionDate = submissionDate;
+        this.leadName = leadName;
+        this.vendorName = vendorName;
+        this.salesPerson = salesPerson;
+        this.rate = rate;
+        this.technology = technology;
+    }
 }

@@ -6,10 +6,15 @@ import com.crudapi.crudapi.Service.ServiceAPI;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
 
 @SpringBootTest
 class CrudapiApplicationTests {
@@ -26,7 +31,7 @@ class CrudapiApplicationTests {
 	@Test
 	public void testGetAllData() {
 		List<UserDetails> result = resourceAPI.getAllData();
-		Assertions.assertEquals(dataList, result);
+		assertEquals(dataList, result);
 	}
 
 	@Test
@@ -35,7 +40,7 @@ class CrudapiApplicationTests {
 		dataList.add(userDetails);
 
 		List<UserDetails> result = resourceAPI.getData("teksystems");
-		Assertions.assertEquals(List.of(userDetails), result);
+		assertEquals(List.of(userDetails), result);
 	}
 
 	@Test
@@ -43,17 +48,19 @@ class CrudapiApplicationTests {
 		UserDetails userDetails = new UserDetails("srikar", "01-01-2022", "sagar","teksystems", "mani",90,"java");
 		resourceAPI.addData(userDetails);
 
-		Assertions.assertEquals(List.of(userDetails), dataList);
+		assertEquals(List.of(userDetails), dataList);
 	}
 
 	@Test
-	public void testDeleteData() {
-		UserDetails userDetails = new UserDetails("srikar", "01-01-2022", "sagar","teksystems", "mani",90,"java");
-		dataList.add(userDetails);
+	void testDeleteData_SuccessfulDeletion() {
 
-		resourceAPI.deleteData(0);
-
-		Assertions.assertTrue(dataList.isEmpty());
+		String idToDelete = "123";
+		UserDetails user1 = new UserDetails("123", "srikar", "01-01-2022", "sagar","teksystems", "mani",90,"java");
+		UserDetails user2 = new UserDetails("456", "srikar", "01-01-2022", "sagar","teksystems", "mani",90,"java");
+		dataList.add(user1);
+		dataList.add(user2);
+		resourceAPI.deleteData(idToDelete);
+		Assertions.assertEquals(1,dataList.size());
 	}
 
 	@Test
@@ -64,7 +71,7 @@ class CrudapiApplicationTests {
 		UserDetails updatedUserDetails = new UserDetails("manasa", "01-01-2022", "sagar","teksystems", "mani",90,"java");
 		resourceAPI.updateData(0, updatedUserDetails);
 
-		Assertions.assertEquals(updatedUserDetails, dataList.get(0));
+		assertEquals(updatedUserDetails, dataList.get(0));
 	}
 
 }
