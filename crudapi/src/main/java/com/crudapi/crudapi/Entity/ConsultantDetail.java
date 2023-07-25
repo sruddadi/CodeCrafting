@@ -1,9 +1,6 @@
 package com.crudapi.crudapi.Entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -23,4 +20,7 @@ public class ConsultantDetail {
     private String emailAddress;
     @Column(name = "phone_number")
     private String phoneNumber;
+    @OneToMany
+    @JoinColumn(name = "lead_id")
+    private LeadDetail leadDetail;
 }
